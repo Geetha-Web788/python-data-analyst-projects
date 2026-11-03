@@ -1,0 +1,20 @@
+
+import pandas as pd
+
+data = {
+    "Name": ["Anu", "Ravi", "Geetha", "Kumar"],
+    "Maths": [85, 90, 95, 70],
+    "Science": [90, 85, 90, 80],
+    "English": [80, 95, 85, 75]
+}
+
+df = pd.DataFrame(data)
+
+df["Total"] = df["Maths"] + df["Science"] + df["English"]
+
+df["Average"] = df["Total"] / 3
+
+print(df)
+
+print("\nClass Average:")
+print(df["Average"].mean())
