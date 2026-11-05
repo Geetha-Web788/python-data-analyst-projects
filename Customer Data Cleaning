@@ -1,0 +1,33 @@
+import pandas as pd
+
+# Customer Data
+data = {
+    "Name": ["Anu", "Ravi", "Priya", "Anu", "Kumar"],
+    "Age": [20, 22, None, 20, 25],
+    "City": ["Chennai", "Salem", "Madurai", "Chennai", None],
+    "Salary": [20000, 25000, 30000, 20000, 35000]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Data:")
+print(df)
+
+# Find Missing Values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Remove Duplicate Records
+df = df.drop_duplicates()
+
+# Fill Missing Values
+df["Age"] = df["Age"].fillna(df["Age"].mean())
+df["City"] = df["City"].fillna("Unknown")
+
+print("\nCleaned Data:")
+print(df)
+
+# Save Cleaned Data
+df.to_csv("cleaned_customers.csv", index=False)
+
+print("\nData Cleaning Completed!")
