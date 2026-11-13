@@ -1,0 +1,36 @@
+
+# Website Traffic & Engagement Analysis
+
+sources = ["Google", "Instagram", "YouTube", "Direct", "Facebook"]
+
+visitors = [1200, 800, 600, 400, 500]
+
+conversions = [120, 96, 45, 60, 40]
+
+bounce_rate = [35, 40, 45, 25, 50]
+
+print("WEBSITE TRAFFIC ANALYSIS")
+print("------------------------")
+
+total_visitors = sum(visitors)
+total_conversions = sum(conversions)
+
+print("Total Visitors:", total_visitors)
+print("Total Conversions:", total_conversions)
+
+print("\nTraffic Source Report")
+
+for i in range(len(sources)):
+    rate = (conversions[i] / visitors[i]) * 100
+
+    print("\nSource:", sources[i])
+    print("Visitors:", visitors[i])
+    print("Conversions:", conversions[i])
+    print("Conversion Rate:", round(rate, 2), "%")
+    print("Bounce Rate:", bounce_rate[i], "%")
+
+highest = max(visitors)
+index = visitors.index(highest)
+
+print("\nBest Traffic Source:", sources[index])
+print("Highest Visitors:", highest)
