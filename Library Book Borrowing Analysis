@@ -1,0 +1,32 @@
+# Library Book Borrowing Analysis
+
+books = {
+    "Python Basics": 15,
+    "Data Science": 12,
+    "Excel Guide": 8,
+    "SQL Basics": 10,
+    "Power BI": 6
+}
+
+print("LIBRARY BOOK BORROWING ANALYSIS")
+print("--------------------------------")
+
+total = sum(books.values())
+
+print("Total Books Borrowed:", total)
+
+print("\nBook Borrowing Report")
+
+for book, count in books.items():
+
+    print(book, ":", count)
+
+    if count >= 10:
+        print("Category: Popular Book")
+    else:
+        print("Category: Less Popular")
+
+most_borrowed = max(books, key=books.get)
+
+print("\nMost Borrowed Book:", most_borrowed)
+print("Borrowing Count:", books[most_borrowed])
